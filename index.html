@@ -379,7 +379,36 @@
     transition: border-color 0.2s, transform 0.2s;
     position: relative;
   }
+  .project-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .project-link:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 4px;
+  }
   .project-card:hover { border-color: var(--cyan); transform: translateY(-4px); }
+  .project-link:hover .project-card { border-color: var(--cyan); transform: translateY(-4px); }
+  .project-link .project-card { height: 100%; }
+  .project-link .project-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .project-link .project-title::after {
+    content: 'Live Site';
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 500;
+    color: var(--cyan);
+    border: 1px solid rgba(0,212,255,0.24);
+    border-radius: 999px;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+  .project-static .project-title::after { content: none; }
   .project-num {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.72rem; color: var(--silver);
@@ -558,7 +587,7 @@
     </div>
     <div class="about-stats">
       <div class="stat-card">
-        <div class="stat-num">2</div>
+        <div class="stat-num">3</div>
         <div class="stat-label">Internships Completed</div>
       </div>
       <div class="stat-card">
@@ -594,6 +623,14 @@
       <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="82"></div></div>
     </div>
     <div class="skill-card reveal">
+      <div class="skill-icon">🖌️</div>
+      <div class="skill-name">UI UX Designing</div>
+      <div class="skill-tags">
+        <span class="tag"> Figma</span><span class="tag">FigJam</span><span class="tag">Adobe PhotoShop</span>
+      </div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="70"></div></div>
+    </div>
+    <div class="skill-card reveal">
       <div class="skill-icon">🐍</div>
       <div class="skill-name">Python Programming</div>
       <div class="skill-tags">
@@ -606,7 +643,7 @@
       <div class="skill-icon">🤖</div>
       <div class="skill-name">Foundation AI Literacy</div>
       <div class="skill-tags">
-        <span class="tag"> Generative AI</span><span class="tag">Oracle AI</span><span class="tag">Copilot 365</span>
+        <span class="tag"> Generative AI</span><span class="tag">Agentic AI-Bots</span><span class="tag">Copilot 365</span>
       </div>
       <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="70"></div></div>
     </div>
@@ -627,13 +664,24 @@
     <h2 class="section-title">Where I've Worked</h2>
     <div class="section-line"></div>
   </div>
+    </div>
   <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Jun 2026 - Jul 2026</div>
+      <div class="timeline-title">FullStack Devolpment Intern</div>
+      <div class="timeline-company">Tirenex · Remote-Based, India</div>
+      <div class="timeline-desc">
+        My Internship at Thiranex provided me with valuable industry exposure and hands-on development experience.
+I worked on practical projects that strengthened my full-stack development and problem-solving skills.
+This experience has further motivated me to grow as a software developer and build meaningful solutions.
+      </div>
+    </div>
     <div class="timeline-item reveal">
       <div class="timeline-date">Mar 2026 — Apr 2026</div>
       <div class="timeline-title">Web Development Intern</div>
       <div class="timeline-company">Tech Vedhu · Salem, India</div>
       <div class="timeline-desc">
-        Designed and developed responsive, user-friendly web applications using modern technologies.
+       Designed and developed responsive, user-friendly web applications using modern technologies.
         Worked across full-stack aspects — strengthening my understanding of the complete development
         lifecycle from UI design to backend integration. Enhanced problem-solving abilities and built
         confidence in shipping real-world projects.
@@ -641,8 +689,8 @@
     </div>
     <div class="timeline-item reveal">
       <div class="timeline-date">Aug 2025 — Sep 2025</div>
-      <div class="timeline-title">Software Development Intern</div>
-      <div class="timeline-company">InternPe · Salem, India</div>
+      <div class="timeline-title">Python Programming Intern</div>
+      <div class="timeline-company">InternPe · Remote-Based, India</div>
       <div class="timeline-desc">
         A learning-intensive internship journey focused on python coding, growth, and practical problem-solving.
         Received a recommendation for strong performance during the program — a milestone that continues
@@ -691,6 +739,9 @@
     <div class="cert-card reveal"><div class="cert-date">Oct 2025</div><div class="cert-name">Oracle AI Certified Foundations</div></div>
     <div class="cert-card reveal"><div class="cert-date">Sep 2025</div><div class="cert-name">IBM SkillBuild — Generative AI</div></div>
     <div class="cert-card reveal"><div class="cert-date">Jun 2025</div><div class="cert-name">MongoDB Basics</div></div>
+    <div class="cert-card reveal"><div class="cert-date">Jun 2026</div><div class="cert-name"> UniAthena : Basics of UI UX Strategy</div></div>
+    <div class="cert-card reveal"><div class="cert-date">Jun 2026</div><div class="cert-name">GUVI HCL : Master DevOps With AWS & Jenkins</div></div>
+    <div class="cert-card reveal"><div class="cert-date">Jan 2026</div><div class="cert-name">Infosis SpringBoard : Responsive Web Development with HTML and CSS</div></div>
   </div>
 </section>
  
@@ -702,27 +753,46 @@
     <div class="section-line"></div>
   </div>
   <div class="projects-grid">
-    <div class="project-card reveal">
-      <div class="project-num">project_01</div>
-      <div class="project-title">Responsive Portfolio Website</div>
-      <div class="project-desc">A personal portfolio built with HTML, CSS, and JavaScript featuring smooth scroll animations, dark theme design, and mobile-responsive layout to showcase projects and skills.</div>
-      <div class="project-stack"><span class="stack-tag">HTML</span><span class="stack-tag">CSS</span><span class="stack-tag">JavaScript</span></div>
-    </div>
-    <div class="project-card reveal">
-      <div class="project-num">project_02</div>
-      <div class="project-title">To-Do List App — Tech Vedhu Internship</div>
-      <div class="project-desc">Designed and developed a full-stack responsive web application during internship, incorporating both front-end interfaces and back-end logic with real-world deployment considerations.</div>
-      <div class="project-stack"><span class="stack-tag">HTML</span><span class="stack-tag">CSS</span><span </span><span class="stack-tag">Backend</span></div>
-    </div>
-    <div class="project-card reveal">
+    <a class="project-link reveal" href="https://sanjaykumar-s-07.github.io/My-Portfolio/" target="_blank" rel="noopener" aria-label="Open Responsive Portfolio Website">
+      <div class="project-card">
+        <div class="project-num">project_01</div>
+        <div class="project-title">Responsive Portfolio Website</div>
+        <div class="project-desc">A personal portfolio built with HTML, CSS, and JavaScript featuring smooth scroll animations, dark theme design, and mobile-responsive layout to showcase projects and skills.</div>
+        <div class="project-stack"><span class="stack-tag">HTML</span><span class="stack-tag">CSS</span><span class="stack-tag">JavaScript</span></div>
+      </div>
+    </a>
+    <a class="project-link reveal" href="https://sanjaykumar-s-07.github.io/To-Do-list-Application/" target="_blank" rel="noopener" aria-label="Open To-Do List App">
+      <div class="project-card">
+        <div class="project-num">project_02</div>
+        <div class="project-title">To-Do List App — Tech Vedhu Internship</div>
+        <div class="project-desc">Designed and developed a full-stack responsive web application during internship, incorporating both front-end interfaces and back-end logic with real-world deployment considerations.</div>
+        <div class="project-stack"><span class="stack-tag">HTML</span><span class="stack-tag">CSS</span><span class="stack-tag">JavaScript</span></div>
+      </div>
+    </a>
+    <div class="project-card project-static reveal">
       <div class="project-num">project_03</div>
       <div class="project-title">Python Scripting Projects - Internpe</div>
       <div class="project-desc">A collection of Python automation and scripting projects developed to solve practical problems, strengthen programming fundamentals, and explore data handling techniques.</div>
       <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">Automation</span><span class="stack-tag">Scripting</span></div>
     </div>
+    <a class="project-link reveal" href="https://sanjaykumar-s-07.github.io/Study_Guard/" target="_blank" rel="noopener" aria-label="Open Study Guard">
+      <div class="project-card">
+        <div class="project-num">project_04</div>
+        <div class="project-title">Study Guard</div>
+        <div class="project-desc">A student productivity web application built to help users stay focused at their study time. It includes session timers and progress monitoring  reduce distractions, and build consistent daily study habits.</div>
+        <div class="project-stack"><span class="stack-tag">HTML</span><span class="stack-tag">CSS</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Web Cam Productivity</span></div>
+      </div>
+    </a>
+    <a class="project-link reveal" href="https://sanjaykumar-s-07.github.io/TaskFlow_DashBoard/" target="_blank" rel="noopener" aria-label="Open TaskFlow Dashboard">
+      <div class="project-card">
+        <div class="project-num">project_05</div>
+        <div class="project-title">TaskFlow Dashboard</div>
+        <div class="project-desc">A clean task management dashboard to create, organize, and track daily tasks in one place with a simple and easy-to-use interface.</div>
+        <div class="project-stack"><span class="stack-tag">HTML</span><span class="stack-tag">CSS</span><span class="stack-tag">JavaScript</span></div>
+      </div>
+    </a>
   </div>
 </section>
- 
 <!-- CONTACT -->
 <section id="contact">
   <div class="reveal">
@@ -742,6 +812,9 @@
         </a>
         <a class="contact-link" href="https://www.linkedin.com/in/sanjay-kumar-s-a695443" target="_blank" rel="noopener">
           <span class="link-icon">💼</span> LinkedIn Profile
+        </a>
+        <a class="contact-link" href="https://github.com/SANJAYKUMAR-S-07" target="_blank" rel="noopener">
+          <span class="link-icon">🐙</span> GitHub Profile
         </a>
         <a class="contact-link" href="#">
           <span class="link-icon">📍</span> Salem, India 636003
@@ -867,3 +940,4 @@
 </script>
 </body>
 </html>
+
